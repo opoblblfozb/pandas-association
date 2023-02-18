@@ -7,8 +7,5 @@ setup(
     author='nonaka',
     packages=find_packages(),
     license='MIT',
-    install_requires=["pandas==1.5.3", "scipy==1.10.0"],
-    extra_require={
-        "dev": ["pytest", "black", "isort"]
-    }
+    install_requires=["pandas==1.5.3", "scipy==1.10.0", "scikit-learn==1.2.1", "pytest"],
 )
