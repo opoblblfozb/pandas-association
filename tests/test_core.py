@@ -44,3 +44,21 @@ class AssociationTestCase(TestCase):
         actual = sut.caluculate("col1_name", "col2_name", method="tschuprow")
         
         self.assertEqual(actual, tchuprow.return_value)
+
+    @patch("pandas_association.core.pearson")    
+    def test_caluculate_person(self, pearson):
+        df = MagicMock(spec=pd.DataFrame)
+        
+        sut = Association(df)
+        actual = sut.caluculate("col1_name", "col2_name", method="pearson")
+        
+        self.assertEqual(actual, pearson.return_value)
+
+    @patch("pandas_association.core.uncertainty_coefficient")    
+    def test_caluculate_person(self, uncertainty_coefficient):
+        df = MagicMock(spec=pd.DataFrame)
+        
+        sut = Association(df)
+        actual = sut.caluculate("col1_name", "col2_name", method="uncertainty_coefficient")
+        
+        self.assertEqual(actual, uncertainty_coefficient.return_value)
