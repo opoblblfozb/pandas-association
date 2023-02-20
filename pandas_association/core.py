@@ -18,7 +18,7 @@ class Association:
     def caluculate(self, col1:str, col2:str, method:str) -> float:
         association_method = self.association_methods.get(method)
         if association_method:
-            return self.association_methods.get(method)(self.data_table, col1, col2)
+            return association_method(self.data_table, col1, col2)
         else:
             raise NotImplementedError(f"method {method} is not implemented")
     
